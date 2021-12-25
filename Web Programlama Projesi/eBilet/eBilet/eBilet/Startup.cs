@@ -67,6 +67,7 @@ namespace eBilet
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+            AppDbInitializer.Seed(app);
         }
     }
 }

@@ -392,3 +392,5 @@ C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\eBilet.dll
 C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\ref\eBilet.dll
 C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\eBilet.pdb
 C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\eBilet.genruntimeconfig.cache
+C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\Razor\Views\Aktörler\Index.cshtml.g.cs
+C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\Razor\Views\Yapımcılar\Index.cshtml.g.cs

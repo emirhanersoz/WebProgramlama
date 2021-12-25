@@ -10,6 +10,8 @@ namespace eBilet.Data
         Aksiyon = 1,
         Komedi,
         Dram,
-        Belgesel
+        Belgesel,
+        Korku,
+        ÇizgiFilm
     }
 }
