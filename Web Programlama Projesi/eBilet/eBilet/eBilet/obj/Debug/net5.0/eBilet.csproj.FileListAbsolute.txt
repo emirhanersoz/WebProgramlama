@@ -376,8 +376,6 @@ C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\eBilet.TagHelpers.inp
 C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\eBilet.TagHelpers.output.cache
 C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\eBilet.RazorCoreGenerate.cache
 C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
@@ -394,3 +392,10 @@ C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\eBilet.pdb
 C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\eBilet.genruntimeconfig.cache
 C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\Razor\Views\Aktörler\Index.cshtml.g.cs
 C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\Razor\Views\Yapımcılar\Index.cshtml.g.cs
+C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\Razor\Views\Sinemalar\Index.cshtml.g.cs
+C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\Razor\Views\Filmler\Index.cshtml.g.cs
+C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\Razor\Views\Aktörler\Oluştur.cshtml.g.cs
+C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\Razor\Views\Aktörler\Detaylar.cshtml.g.cs
+C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\Razor\Views\Aktörler\Düzenle.cshtml.g.cs
+C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\Razor\Views\Aktörler\Sil.cshtml.g.cs
+C:\Users\eemir\source\repos\eBilet\eBilet\obj\Debug\net5.0\Razor\Views\Shared\NotFound.cshtml.g.cs

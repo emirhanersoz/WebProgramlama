@@ -1,4 +1,5 @@
 ﻿using eBilet.Data;
+using eBilet.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -17,8 +18,8 @@ namespace eBilet.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var bütünYapımcılar = await _context.Sinemalar.ToListAsync();
-            return View();
+            var bütünSinemalar = await _context.Sinemalar.ToListAsync();
+            return View(bütünSinemalar);
         }
     }
 }

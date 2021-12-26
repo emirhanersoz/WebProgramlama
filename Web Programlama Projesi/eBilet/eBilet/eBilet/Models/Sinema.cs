@@ -10,8 +10,17 @@ namespace eBilet.Models
     {
         [Key]
         public int Id { get; set; }
+
+        [Display(Name = "Sinema Logo")]
+        [Required(ErrorMessage = "Logosu gerekli")]
         public string Logo { get; set; }
+
+        [Display(Name = "Sinema İsim")]
+        [Required(ErrorMessage = "İsim gerekli")]
         public string İsim { get; set; }
+
+        [Display(Name = "Açıklama")]
+        [Required(ErrorMessage = "Açıklama gerekli")]
         public string Açıklama { get; set; }
 
         public List<Film> Filmler { get; set; }

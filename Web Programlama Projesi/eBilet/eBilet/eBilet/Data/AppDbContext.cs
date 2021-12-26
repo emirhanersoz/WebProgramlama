@@ -11,7 +11,6 @@ namespace eBilet.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -33,5 +32,9 @@ namespace eBilet.Data
         public DbSet<Aktör_Film> Aktörler_Filmler { get; set; }
         public DbSet<Sinema> Sinemalar { get; set; }
         public DbSet<Yapımcı> Yapımcılar { get; set; }
+
+        public DbSet<Sipariş> Siparişler { get; set; }
+        public DbSet<SiparişÜrün> SiparişÜrünler { get; set; }
+        public DbSet<AlışverişSepetiÜrün> AlışverişSepetiÜrünler { get; set; }
     }
 }

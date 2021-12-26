@@ -1,0 +1,107 @@
+﻿@model YeniFilmVM
+@using eBilet.Data;
+ 
+@{
+    ViewData["Title"] = "Film Güncelle";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h4>Film Güncelle</h4>
+        </p>
+
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Edit">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="İsim" class="control-label"></label>
+                                <input asp-for="İsim" class="form-control" />
+                                <span asp-validation-for="İsim" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="BaşlangıçTarihi" class="control-label"></label>
+                                <input asp-for="BaşlangıçTarihi" type="date" class="form-control" />
+                                <span asp-validation-for="BaşlangıçTarihi" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="BitişTarihi" class="control-label"></label>
+                                <input asp-for="BitişTarihi" type="date" class="form-control" />
+                                <span asp-validation-for="BitişTarihi" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Fiyat" class="control-label"></label>
+                                <input asp-for="Fiyat" type="number" class="form-control" />
+                                <span asp-validation-for="Fiyat" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ResimUrl" class="control-label"></label>
+                                <input asp-for="ResimUrl" class="form-control" />
+                                <span asp-validation-for="ResimUrl" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="SinemaId" class="control-label"></label>
+                                <select asp-for="SinemaId" class="form-control" asp-items="ViewBag.Sinemalar"></select>
+                                <span asp-validation-for="SinemaId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="FilmKategori" class="control-label"></label>
+                                <select asp-for="FilmKategori" class="form-control" asp-items="Html.GetEnumSelectList<FilmKategori>()"></select>
+                                <span asp-validation-for="FilmKategori" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="YapımcıId" class="control-label"></label>
+                                <select asp-for="YapımcıId" class="form-control" asp-items="ViewBag.Yapımcılar"></select>
+                                <span asp-validation-for="YapımcıId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="AktörId" class="control-label"></label>
+                                <select asp-for="AktörId" class="form-control"  asp-items="ViewBag.Aktörler" multiple></select>
+                                <span asp-validation-for="AktörId" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label asp-for="Açıklama" class="control-label"></label>
+                                <textarea asp-for="Açıklama" class="form-control"></textarea>
+                                <span asp-validation-for="Açıklama" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 offset-4 text-center">
+                        <img width="100%" id="ImageUrlPreview" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Update" class="btn btn-outline-success float-right" />
+                        <a class="btn btn-outline-secondary" asp-action="Index">Hepsini Göster</a>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts{ 
+    <script>
+        $(document).ready(function () {
+            var output = document.getElementById("ImageUrlPreview");
+            output.src = $("#ImageURL").val();
+        });
+
+        $("#ImageURL").on("change", function () {
+            var output = document.getElementById("ImageUrlPreview");
+            output.src = $(this).val();
+        })
+    </script>
+}

@@ -17,8 +17,8 @@ namespace eBilet.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var bütünYapımcılar = await _context.Filmler.ToListAsync();
-            return View();
+            var bütünFilmler = await _context.Filmler.Include(n => n.Sinema).OrderBy(n => n.İsim).ToListAsync();
+            return View(bütünFilmler);
         }
     }
 }

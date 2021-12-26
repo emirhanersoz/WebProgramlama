@@ -1,0 +1,45 @@
+﻿@using eBilet.Data.ViewModels; 
+@model GirişVM;
+
+@{ 
+    ViewData["Title"] = "Hesabınıza giriş yapınız";
+}
+
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <p>
+            <h4>Hesabınıza Giriş Yapınız</h4>
+        </p>
+
+        @if(TempData["Error"] != null)
+            {
+                <div class="col-md-12 alert alert-danger">
+                    <span><b>Üzgünüz!</b> - @TempData["Error"] </span>
+                </div>
+            }
+
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Giriş">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group">
+                        <label asp-for="EmailAdres" class="control-label"></label>
+                        <input asp-for="EmailAdres" class="form-control" />
+                        <span asp-validation-for="EmailAdres" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Şifre" class="control-label"></label>
+                        <input asp-for="Şifre" class="form-control" />
+                        <span asp-validation-for="Şifre" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="btn btn-outline-success float-right" type="submit" value="Log in" />
+                        <a class="btn btn-outline-secondary" asp-controller="Filmler" asp-action="Index">İptal</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+﻿@model Film
+
+@{
+    ViewData["Title"] = "Film Detayları";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <div class="card mb-12">
+            <div class="row g-0">
+                <div class="col-md-12">
+                    <div class="card-header text-white bg-info">
+                        <p class="card-text">
+                            <h5 class="card-title">
+                                @Model.İsim
+                            </h5>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <img src="@Model.ResimURL" width="100%" alt="@Model.İsim">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <p class="card-text">@Model.Açıklama</p>
+                        <p class="card-text">
+                            <b>Sinema: </b>
+                            <a asp-controller="Cinemas" asp-action="Details" asp-route-id="@Model.SinemaId">
+                                @Model.Sinema.İsim
+                            </a>
+                        </p>
+                        <p class="card-text">
+                            <b>Yapımcılar: </b>
+                            <a asp-controller="Producers" asp-action="Details" asp-route-id="@Model.YapımcıId">
+                                @Model.Yapımcı.AdSoyad
+                            </a>
+                        </p>
+                        <p class="card-text"><b>Kategori: </b>@Model.FilmKategori</p>
+                        <p class="card-text"><b>Başlangıç Tarihi: </b>@Model.BaşlangıçTarihi.ToString("dd MMM yy")</p>
+                        <p class="card-text"><b>Bitiş Tarihi: </b>@Model.BitişTarihi.ToString("dd MMM yy")</p>
+                        <p class="card-text ">
+                            <b>Status: </b>
+                            @if (DateTime.Now >= Model.BaşlangıçTarihi && DateTime.Now <= Model.BitişTarihi)
+                            {
+                                <span class="badge bg-success text-white">MEVCUT</span>
+                            }
+                            else if (DateTime.Now > Model.BitişTarihi)
+                            {
+                                <span class="badge bg-danger text-white">SÜRESİ DOLMUŞ</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-primary text-white">GELMEK ÜZERE</span>
+                            }
+                        </p>
+                        <p class="card-text">
+                            <b>Actors: </b>
+                            <hr />
+                            <div class="row">
+                                @foreach (var aktör in Model.Aktörler_Filmler)
+                                {
+                                    <div class="column text-center">
+                                        <img class="border-info rounded-circle" src="@aktör.Aktör.ProfilResmiURL" style="max-width: 150px" />
+                                        <br />
+                                        <a asp-controller="Actors" asp-action="Details" asp-route-id="@aktör.Aktör">@aktör.Aktör.AdSoyad</a>
+                                    </div>
+                                }
+                            </div>
+                        </p>
+
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="card-footer">
+                        <p class="card-text">
+                            <a class="btn btn-outline-primary float-right" asp-action="Index">
+                                Back to List
+                            </a>
+                            <a class="btn btn-success text-white  @((DateTime.Now > Model.BitişTarihi) ? "disabled" : "")" 
+                               asp-controller="Orders" 
+                               asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id"><i class="bi bi-cart-plus"></i> Ürünü Ekle (Fiyat @Model.Fiyat.ToString("c"))</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

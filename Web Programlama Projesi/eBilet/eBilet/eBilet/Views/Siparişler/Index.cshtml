@@ -1,0 +1,55 @@
+﻿@model List<Sipariş>
+
+@{ 
+    ViewData["Title"] = "Bütün Siparişler";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h4>Bütün siparişleri listele</h4>
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Sipariş ID</th>
+                    <th>Ürünler</th>
+                    <th>Toplam</th>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <th>Kullanıcılar</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model)
+                {
+                <tr>
+                    <td class="align-middle">@order.Id</td>
+                    <td class="align-middle">
+                        <ul style="list-style-type:none">
+                            @foreach (var item in order.SiparişÜrünler)
+                            {
+                                <li>
+                                    <div class="alert alert-info" role="alert">
+                                        <span class="badge bg-success">@item.Miktar</span> [@item.Fiyat.ToString("c")] - @item.Film.İsim
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </td>
+                    <td class="align-middle">
+                        @order.SiparişÜrünler.Select(m => m.Film.Fiyat * m.Miktar).Sum().ToString("c")
+                    </td>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <td class="align-middle"> @order.Kullanıcı.AdSoyad </td>
+                    }
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
