@@ -1,0 +1,6 @@
+ADMİN;
+id:g191210021@sakarya.edu.tr	
+şifre:Coding@1234?
+Kullanıcı;
+id:g191210096@sakarya.edu.tr
+şifre:Coding@1234?
